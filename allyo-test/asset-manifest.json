@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/allyo-test/static/css/main.2d9f764c.chunk.css",
+    "main.js": "/allyo-test/static/js/main.e011c085.chunk.js",
+    "main.js.map": "/allyo-test/static/js/main.e011c085.chunk.js.map",
+    "runtime-main.js": "/allyo-test/static/js/runtime-main.b527d20a.js",
+    "runtime-main.js.map": "/allyo-test/static/js/runtime-main.b527d20a.js.map",
+    "static/js/2.dc8ccce7.chunk.js": "/allyo-test/static/js/2.dc8ccce7.chunk.js",
+    "static/js/2.dc8ccce7.chunk.js.map": "/allyo-test/static/js/2.dc8ccce7.chunk.js.map",
+    "index.html": "/allyo-test/index.html",
+    "precache-manifest.d72a55f557f09e15240708bbe0a152be.js": "/allyo-test/precache-manifest.d72a55f557f09e15240708bbe0a152be.js",
+    "service-worker.js": "/allyo-test/service-worker.js",
+    "static/css/main.2d9f764c.chunk.css.map": "/allyo-test/static/css/main.2d9f764c.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b527d20a.js",
+    "static/js/2.dc8ccce7.chunk.js",
+    "static/css/main.2d9f764c.chunk.css",
+    "static/js/main.e011c085.chunk.js"
+  ]
+}
