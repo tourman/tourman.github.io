@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script>
+      (() => {
+        function getScreenSizes() {
+          const routes = [
+            "innerHeight",
+            "innerWidth",
+            "outerHeight",
+            "outerWidth",
+            "screen.availHeight",
+            "screen.availLeft",
+            "screen.availTop",
+            "screen.availWidth",
+            "screen.colorDepth",
+            "screen.height",
+            "screen.pixelDepth",
+            "screen.width",
+          ];
+          return Object.fromEntries(
+            routes.map((route) => {
+              const path = route.split(".");
+              let result = window;
+              for (const key of path) {
+                result = result[key];
+              }
+              return [route, result];
+            })
+          );
+        }
+        function printScreenSizes(sizes) {
+          const string = JSON.stringify(sizes, null, 2);
+          const pre = document.querySelector("pre");
+          pre.innerText = string;
+        }
+        function main() {
+          printScreenSizes(getScreenSizes());
+        }
+        window.addEventListener("load", main);
+        window.addEventListener("resize", main);
+      })();
+    </script>
+  </head>
+  <body>
+    <pre></pre>
+  </body>
+</html>
