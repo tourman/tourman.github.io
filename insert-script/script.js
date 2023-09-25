@@ -18,23 +18,29 @@
   div.style = styleToString(style);
   div.innerHTML = "This is the script";
   document.body.prepend(div);
-  fetch("https://postman-echo.com/post", {
+  function showError(error) {
+    div.style = styleToString({ ...style, background: "red" });
+    div.innerHTML = String(error);
+  }
+  fetch("https://httpbin.org/post", {
     method: "POST",
-    mode: "no-cors",
+    // mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
+      Accept: "application/json",
     },
     redirect: "follow",
     referrerPolicy: "no-referrer",
     body: JSON.stringify(style),
   }).then(
-    (response) => {
-      console.log("response", response);
-      div.innerHTML = "Got response!";
-    },
-    (error) => {
-      div.style = styleToString({ ...style, background: "red" });
-      div.innerHTML = String(error);
-    }
+    (response) =>
+      response
+        .json()
+        .then(
+          ({ data }) =>
+            (div.innerHTML = `<pre style="margin: 0">${data}</pre>`),
+          showError
+        ),
+    showError
   );
 })();
