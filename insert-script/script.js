@@ -22,25 +22,20 @@
     div.style = styleToString({ ...style, background: "red" });
     div.innerHTML = String(error);
   }
-  fetch("https://httpbin.org/post", {
-    method: "POST",
-    // mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    redirect: "follow",
-    referrerPolicy: "no-referrer",
-    body: JSON.stringify(style),
-  }).then(
-    (response) =>
-      response
-        .json()
-        .then(
-          ({ data }) =>
-            (div.innerHTML = `<pre style="margin: 0">${data}</pre>`),
-          showError
-        ),
-    showError
-  );
+  async function proceed() {
+    const response = await fetch("https://httpbin.org/post", {
+      method: "POST",
+      // mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      redirect: "follow",
+      referrerPolicy: "no-referrer",
+      body: JSON.stringify(style),
+    });
+    const { data } = await response.json();
+    div.innerHTML = `<pre style="margin: 0">${data}</pre>`;
+  }
+  proceed().catch(showError);
 })();
