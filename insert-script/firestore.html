@@ -3,6 +3,15 @@
     <!-- <script src="./firestore.js" type="module"></script> -->
   </head>
   <body>
-    <p>This is test</p>
+    <pre>
+window.pass = "";
+var script = document.createElement("script");
+script.setAttribute(
+  "src",
+  "https://tourman.github.io/insert-script/firestore-index.js"
+);
+script.setAttribute("type", "module");
+document.head.append(script);
+    </pre>
   </body>
 </html>
