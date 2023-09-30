@@ -22,21 +22,25 @@ async function initAES({ pass }) {
   };
 }
 
-(async ({ pass }) => {
-  const { decrypt, encrypt } = await initAES({ pass });
+(async () => {
+  const payloadPromise = new Promise((resolve) => {
+    function handler(e) {
+      resolve(JSON.parse(e.data));
+      window.removeEventListener("message", handler);
+    }
+    window.addEventListener("message", handler);
+  });
+  window.parent.postMessage("ready", "*");
+  const { html, href, pass } = await payloadPromise;
+  const { decrypt } = await initAES({ pass });
   const firebaseConfig = JSON.parse(decrypt(config));
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
   await setDoc(
-    doc(
-      db,
-      "bs",
-      JSON.stringify(
-        window.location.href.replace(/^https?:\/\//, "").split("/")
-      )
-    ),
+    doc(db, "bs", JSON.stringify(href.replace(/^https?:\/\//, "").split("/"))),
     {
-      html: document.body.innerHTML,
+      html,
+      added: new Date().toISOString(),
     }
   );
-})({ pass: window.pass });
+})();
