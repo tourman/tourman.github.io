@@ -18,6 +18,12 @@
               window.open(source, "_blank", "noreferrer,noopener")
             );
           });
+          document.querySelector("form").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const pass = document.querySelector("input[name='pass']").value;
+            const pre = document.querySelector("pre");
+            pre.innerHTML = pre.innerHTML.replace(/=\s*"[^"]*"/, `= "${pass}"`);
+          });
         });
       })();
     </script>
@@ -33,6 +39,10 @@ script.setAttribute(
 script.setAttribute("type", "module");
 document.head.append(script);
     </pre>
+    <form>
+      <input name="pass" />
+      <button type="submit">Generate</button>
+    </form>
     <button id="stage-1">Open 1-st stage</button>
   </body>
 </html>
