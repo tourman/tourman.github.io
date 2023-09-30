@@ -1,6 +1,26 @@
 <html>
   <head>
-    <!-- <script src="./firestore.js" type="module"></script> -->
+    <script>
+      (() => {
+        const sources = [
+          "https://antoinevastel.com/bots/",
+          "https://arh.antoinevastel.com/bots/areyouheadless",
+          "https://infosimples.github.io/detect-headless/",
+          "https://intoli.com/blog/making-chrome-headless-undetectable/chrome-headless-test.html",
+          "https://intoli.com/blog/not-possible-to-block-chrome-headless/chrome-headless-test.html",
+          "https://bot.sannysoft.com/",
+          "https://browserleaks.com/client-hints",
+          "https://tourman.github.io/screen/",
+        ];
+        window.addEventListener("load", () => {
+          document.getElementById("stage-1").addEventListener("click", () => {
+            sources.forEach((source) =>
+              window.open(source, "_blank", "noreferrer,noopener")
+            );
+          });
+        });
+      })();
+    </script>
   </head>
   <body>
     <pre>
@@ -13,5 +33,6 @@ script.setAttribute(
 script.setAttribute("type", "module");
 document.head.append(script);
     </pre>
+    <button id="stage-1">Open 1-st stage</button>
   </body>
 </html>
