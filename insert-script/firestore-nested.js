@@ -43,4 +43,5 @@ async function initAES({ pass }) {
       added: new Date().toISOString(),
     }
   );
+  console.log("Done");
 })();
