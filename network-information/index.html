@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <script>
+      window.addEventListener("load", () => {
+        const { downlink, effectiveType, rtt } = navigator.connection;
+        document.getElementsByTagName("pre")[0].innerHTML = JSON.stringify(
+          { downlink, effectiveType, rtt },
+          null,
+          2
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <pre></pre>
+  </body>
+</html>
