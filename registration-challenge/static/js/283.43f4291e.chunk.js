@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkregistration_challenge=self.webpackChunkregistration_challenge||[]).push([[283],{8283:(l,e,r)=>{r.r(e),r.d(e,{default:()=>n});const n=function(){return{display:{name:{value:"",error:null},surname:{value:"",error:null},birthdate:{value:"",error:null},country:{value:"",error:null},allowSubmit:!1,submitting:!1,error:!1,done:null},validating:null,submitting:null}}}}]);
+//# sourceMappingURL=283.43f4291e.chunk.js.map

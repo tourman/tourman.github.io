@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkregistration_challenge=self.webpackChunkregistration_challenge||[]).push([[357],{9357:(e,t,n)=>{n.r(t),n.d(t,{default:()=>s});var r=n(579);const s=function(e){let{useDelete:t}=e;return function(e){let{Component:n,...s}=e;const l=t(s);return(0,r.jsx)(n,{...s,...l})}}}}]);
+//# sourceMappingURL=357.a4d7fdd4.chunk.js.map

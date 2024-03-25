@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/612.59cbc31c.chunk.js","mappings":"4JAEA,Q,QAAoB,C","sources":["main/Popup.ts"],"sourcesContent":["import { Popup } from 'semantic-ui-react';\n\nexport default Popup;\n"],"names":[],"sourceRoot":""}
